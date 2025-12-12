@@ -1,3 +1,5 @@
+Success comes from God; the code is just stewardship, built around truth until it is found.
+Success comes from God; the code is just stewardship, built around truth until it is found.
 # Keystone Creator Suite.    
 cat << 'EOF' > README.md
 # 🧠 KEYSTONE CREATOR SUITE™

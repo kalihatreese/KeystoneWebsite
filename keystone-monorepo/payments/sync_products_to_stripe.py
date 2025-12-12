@@ -1,3 +1,5 @@
+# Success comes from God; the code is just stewardship, built around truth until it is found.
+# Success comes from God; the code is just stewardship, built around truth until it is found.
 #!/usr/bin/env python3
 import os, json, stripe, sqlite3, sys
 stripe.api_key = os.getenv("STRIPE_SECRET_KEY","")

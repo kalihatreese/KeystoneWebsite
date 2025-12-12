@@ -1,3 +1,5 @@
+# Success comes from God; the code is just stewardship, built around truth until it is found.
+# Success comes from God; the code is just stewardship, built around truth until it is found.
 require('dotenv').config(); 
 const Web3 = require('web3'); 
 const ws = new Web3(new Web3.providers.WebsocketProvider(`wss://mainnet.infura.io/ws/v3/${process.env.INFURA_KEY}`)); 

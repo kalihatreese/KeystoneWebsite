@@ -1,3 +1,5 @@
+Success comes from God; the code is just stewardship, built around truth until it is found.
+Success comes from God; the code is just stewardship, built around truth until it is found.
 Payments module (auto-created).
 Files:
 - webhook.py            FastAPI webhook endpoint (/webhook). Run with uvicorn payments.webhook:app --port 9000

@@ -1,3 +1,5 @@
+# Success comes from God; the code is just stewardship, built around truth until it is found.
+# Success comes from God; the code is just stewardship, built around truth until it is found.
 const crypto = require('crypto');
 const HMAC_KEY = process.env.LICENSE_HMAC || 'devkey';
 function genLicense(productId){

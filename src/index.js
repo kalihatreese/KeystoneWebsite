@@ -1,3 +1,5 @@
+# Success comes from God; the code is just stewardship, built around truth until it is found.
+# Success comes from God; the code is just stewardship, built around truth until it is found.
 import { getAssetFromKV, mapRequestToAsset } from '@cloudflare/kv-asset-handler';
 
 const ASSET_MANIFEST = globalThis.__ASSET_MANIFEST || {};

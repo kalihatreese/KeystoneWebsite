@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="40" viewBox="0 0 240 40">
+  <rect width="240" height="40" rx="6" fill="#000"/>
+  <g transform="translate(12,7)">
+    <circle cx="18" cy="13" r="12" fill="#0a63ff"/>
+    <path d="M36 4h160v24H36z" fill="#c0c6cc" opacity="0.06"/>
+  </g>
+  <text x="56" y="27" font-family="Inter,Arial" font-size="14" fill="#c0c6cc">Keystone AI & ML</text>
+</svg>

@@ -1,40 +1,54 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Keystone AI & ML</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Keystone AI & ML — ReeseEffect Preview</title>
 <link rel="stylesheet" href="css/style.css">
+<!-- libs (local fallback if offline) -->
+<script src="https://unpkg.com/three@0.152.2/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
 </head>
 <body>
-<header>
-  <div id="founder-contact">
-    Call founder: 1-919-628-0444 (24/7)
+<div id="canvas-wrap"><canvas id="bg-canvas"></canvas></div>
+
+<header class="site-header" role="banner">
+  <div class="brand">
+    <img src="assets/keystone-logo.svg" alt="Keystone" class="logo"/>
+    <div class="titles">
+      <h1>Keystone AI & ML</h1>
+      <p class="tag">Building the archways of intelligence — machine and man</p>
+    </div>
   </div>
-  <h1>Keystone AI & ML</h1>
-  <p>Building the archways of AI & Freedom</p>
+  <div id="founder-contact">Call founder: <strong>1-919-628-0444</strong> (24/7)</div>
 </header>
 
-<main>
-  <section id="products">
-    <div class="product-card">
-      <img src="images/product1.jpg" alt="Keystone Model 1">
-      <h2>Keystone Model 1</h2>
-      <p>$199.99 — Buy One, Get One Free</p>
-      <button class="paypal-btn" data-id="YOUR_PAYPAL_BUTTON_ID">Buy with PayPal</button>
-      <button class="stripe-btn">Buy with Stripe</button>
+<main class="container" role="main">
+  <section class="hero" aria-label="Hero">
+    <h2>ReeseEffect — Intelligence in resonance</h2>
+    <p class="lead">Ethical, auditable, and engineered to perform. Success comes from God; the code is stewardship.</p>
+    <div class="motto">Light is math. Art is waves. Sound distributes the signal.</div>
+    <div class="cta-row">
+      <button id="explore" class="cta">Explore Models</button>
+      <button id="demo" class="cta ghost">Request Demo</button>
     </div>
+  </section>
 
-    <div class="product-card">
-      <img src="images/product2.jpg" alt="Keystone Model 2">
-      <h2>Keystone Model 2</h2>
-      <p>$199.99 — Buy One, Get One Free</p>
-      <button class="paypal-btn" data-id="YOUR_PAYPAL_BUTTON_ID">Buy with PayPal</button>
-      <button class="stripe-btn">Buy with Stripe</button>
-    </div>
+  <section id="models" class="models-grid" aria-label="Models">
+    <!-- JS will populate 4 model cards -->
+  </section>
+
+  <section class="story">
+    <h3>The Path</h3>
+    <p>From chaos to craft — every sentence contains a story, every number holds the math. We marry word and math to reveal the architecture beneath the noise.</p>
   </section>
 </main>
 
-<script src="js/main.js"></script>
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-line">© Keystone AI & ML — Stewardship in code • Reese Limited LLC</div>
+  <div class="footer-motto">"Light is math. Art is waves. Sound distributes the signal."</div>
+</footer>
+
+<script src="js/main.js" defer></script>
 </body>
 </html>
