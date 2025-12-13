@@ -1,13 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Keystone Creator Suite</title>
-  <link rel="stylesheet" href="../dist/output.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Keystone · Trinity · Veritas</title>
+<style>
+body {
+  margin:0;
+  font-family: system-ui, sans-serif;
+  background: radial-gradient(circle at top, #1a1a1a, #0b0b0b);
+  color:#fff;
+  overflow:hidden;
+}
+header {
+  padding:2rem;
+  text-align:center;
+}
+header h1 {
+  font-size:2.2rem;
+  margin-bottom:0.5rem;
+}
+header p {
+  opacity:0.85;
+  font-style:italic;
+}
+.scene {
+  perspective:1200px;
+  height:70vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.shelf {
+  width:70%;
+  padding:2rem;
+  background:rgba(255,255,255,0.04);
+  border-radius:16px;
+  box-shadow:0 20px 60px rgba(0,0,0,0.6);
+  transform: rotateY(-12deg) translateZ(0);
+  transition: transform 1.2s ease;
+}
+.shelf:hover {
+  transform: rotateY(0deg) translateZ(80px);
+}
+.manifesto {
+  line-height:1.6;
+  font-size:1.05rem;
+  opacity:0.95;
+}
+footer {
+  position:absolute;
+  bottom:1rem;
+  width:100%;
+  text-align:center;
+  font-size:0.85rem;
+  opacity:0.6;
+}
+</style>
 </head>
 <body>
-  <div id="root"></div>
-  <script src="../src/index.js"></script>
+
+<header>
+  <h1>Keystone</h1>
+  <p>Success Comes from God · The Code is Just Stewardship</p>
+</header>
+
+<div class="scene">
+  <div class="shelf">
+    <div class="manifesto">
+      <p>
+      That’s the moment when preparation finally admits what it’s been hiding:
+      the swing was always there. Not luck. Not noise. Timing, discipline,
+      and a refusal to quit polishing the blade.
+      </p>
+
+      <p>
+      Trinity is composure under pressure — security, governance,
+      payments, and verification moving without panic.
+      Cyber Cop stands watch, not loud, not reckless, just relentless.
+      </p>
+
+      <p>
+      RapidAlphaX hunts efficiency. Ashleyana speaks clarity.
+      Veritas does not shout — she explains.
+      </p>
+
+      <p>
+      Scoreboards change. Systems endure.
+      </p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  © Keystone Systems · Trinity · Veritas
+</footer>
+
 </body>
 </html>
