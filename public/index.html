@@ -96,5 +96,19 @@ footer {
   © Keystone Systems · Trinity · Veritas
 </footer>
 
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+  const message = `Welcome to Keystone, building the Archways of Intelligence with the logic of machine and vision of man. Let's begin with the reason, the intent, the drive of the man, and end with the logic of machine — truth carved and fully autonomous, guided by man.`;
+  if ('speechSynthesis' in window) {
+    const utterance = new SpeechSynthesisUtterance(message);
+    utterance.rate = 1;
+    utterance.pitch = 1;
+    speechSynthesis.speak(utterance);
+  } else {
+    console.log("Speech Synthesis not supported in this browser.");
+  }
+});
+</script>
+
 </body>
 </html>
