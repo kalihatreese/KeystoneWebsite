@@ -1,16 +1,17 @@
 #!/data/data/com.termux/files/usr/bin/bash
-# Keep Trinity alive on ReeseOS boot
+# Startup script for Trinity + Veritas
 
-# Acquire wake lock to prevent phone sleep
-termux-wake-lock
+# Wait a bit for network and storage
+sleep 10
 
-# Navigate to Trinity folder
 cd ~/KeystoneCreatorSuite/trinity
 
-# Start PM2 (resurrect previous processes or start fresh)
-pm2 resurrect || pm2 start index.js --name trinity --watch \
---output ~/KeystoneCreatorSuite/trinity/logs/out.log \
---error ~/KeystoneCreatorSuite/trinity/logs/err.log
+# Kill any old node processes on port 3001
+PID=$(lsof -t -i:3001)
+if [ ! -z "$PID" ]; then
+  kill -9 $PID
+fi
 
-# Save current PM2 process list
-pm2 save
+# Start Trinity in background with logging
+nohup node index.js > veritas.log 2>&1 &
+echo "Trinity started, logging to veritas.log"
