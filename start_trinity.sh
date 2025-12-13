@@ -1,5 +1,3 @@
-# Success comes from God; the code is just stewardship, built around truth until it is found.
-# Success comes from God; the code is just stewardship, built around truth until it is found.
 #!/data/data/com.termux/files/usr/bin/bash
 # Keep Trinity alive on ReeseOS boot
 

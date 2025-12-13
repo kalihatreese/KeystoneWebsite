@@ -1,5 +1,3 @@
-# Success comes from God; the code is just stewardship, built around truth until it is found.
-# Success comes from God; the code is just stewardship, built around truth until it is found.
 #!/usr/bin/env bash
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")"/.. && pwd)"

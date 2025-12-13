@@ -1,0 +1,107 @@
+=== Trinity Invoice Injection Started ===
+Time: Fri Dec 12 20:06:09 EST 2025
+----------------------------------------
+[2025-12-12 20:06:09] Injected ETH invoice | Amount: 25 | ID: 6e5e0ac5-dd57-49cc-969a-da38c5c5a68f | Status: pending
+[2025-12-12 20:06:13] Injected BSC invoice | Amount: 30 | ID: 44e4c357-bace-47fb-9fd7-d0a34223b059 | Status: pending
+[2025-12-12 20:06:16] Injected POLYGON invoice | Amount: 35 | ID: 49e24991-17e3-44c4-82b0-4c8c2ae43459 | Status: pending
+[2025-12-12 20:06:19] Injected ETH invoice | Amount: 40 | ID: f434af9d-9538-4020-bb7f-cf8f6d73b34f | Status: pending
+[2025-12-12 20:06:22] Injected BSC invoice | Amount: 45 | ID: 892b8fa0-406d-4682-8a82-d5ae15fbd525 | Status: pending
+[2025-12-12 20:06:25] Injected POLYGON invoice | Amount: 50 | ID: 3a80af89-6202-4612-a405-a814b4d774d8 | Status: pending
+[2025-12-12 20:06:28] Injected ETH invoice | Amount: 55 | ID: 4d30f1d0-146b-4875-8e18-0e52cc1ca48f | Status: pending
+[2025-12-12 20:06:32] Injected BSC invoice | Amount: 60 | ID: c619f18a-5a38-488b-b43b-955fa1b326af | Status: pending
+[2025-12-12 20:06:35] Injected POLYGON invoice | Amount: 65 | ID: 7210a7a8-c2d8-4e2c-a916-0ecff195337d | Status: pending
+[2025-12-12 20:06:39] Injected ETH invoice | Amount: 70 | ID: b96c3fcc-846b-4051-a79f-33ba476167a1 | Status: pending
+[2025-12-12 20:06:42] Injected BSC invoice | Amount: 75 | ID: 7e2378d1-ef67-42fe-a6cc-2b20cc25cbcc | Status: pending
+[2025-12-12 20:06:45] Injected POLYGON invoice | Amount: 80 | ID: e9a0f6ba-bd0f-4b26-bb2b-b3abeef1c0bd | Status: pending
+[2025-12-12 20:06:49] Injected ETH invoice | Amount: 85 | ID: 976bbcfb-4073-4080-87f1-c2bf1dfbfa04 | Status: pending
+[2025-12-12 20:06:52] Injected BSC invoice | Amount: 90 | ID: 3fae15a7-fad8-4c40-98c0-99d78c92e914 | Status: pending
+[2025-12-12 20:06:55] Injected POLYGON invoice | Amount: 95 | ID: b8107487-ed12-4c48-8b68-0a10a9386aea | Status: pending
+[2025-12-12 20:06:58] Injected ETH invoice | Amount: 100 | ID: 50e1c39f-08ca-4ea2-aa1a-242acb044fcb | Status: pending
+[2025-12-12 20:07:02] Injected BSC invoice | Amount: 105 | ID: 815f92e2-416e-4a91-ab00-3833015ca18c | Status: pending
+[2025-12-12 20:07:05] Injected POLYGON invoice | Amount: 110 | ID: 933c5fe1-8c54-4845-9eaf-db5ec7bfe6c4 | Status: pending
+[2025-12-12 20:07:08] Injected ETH invoice | Amount: 115 | ID: 3ba064c8-8a06-4dad-be75-bfdedbf1bdf7 | Status: pending
+[2025-12-12 20:07:11] Injected BSC invoice | Amount: 120 | ID: 4b9ae1cd-8e62-457b-b1ef-afc48b0ac514 | Status: pending
+[2025-12-12 20:07:14] Injected POLYGON invoice | Amount: 125 | ID: eff22aa1-5428-4c36-8acf-4ee907c9d373 | Status: pending
+[2025-12-12 20:07:18] Injected ETH invoice | Amount: 130 | ID: 8b212fa6-3c42-4fed-8dd6-ce6f77a68407 | Status: pending
+[2025-12-12 20:07:21] Injected BSC invoice | Amount: 135 | ID: 164c6cb0-41af-49e4-9d98-a802eb475615 | Status: pending
+[2025-12-12 20:07:24] Injected POLYGON invoice | Amount: 140 | ID: df8664ce-0d55-412e-812c-c24417501f1d | Status: pending
+[2025-12-12 20:07:27] Injected ETH invoice | Amount: 145 | ID: 74c8aa7c-761a-439c-9333-439f08b02886 | Status: pending
+[2025-12-12 20:07:30] Injected BSC invoice | Amount: 150 | ID: b642de7a-f601-47a5-b59e-588c8bfd963b | Status: pending
+[2025-12-12 20:07:33] Injected POLYGON invoice | Amount: 155 | ID: 42ae56e5-57b6-4300-826c-f49404d7761f | Status: pending
+[2025-12-12 20:07:37] Injected ETH invoice | Amount: 160 | ID: 27acaed9-33d9-41b4-b341-8a19399e73ba | Status: pending
+[2025-12-12 20:07:40] Injected BSC invoice | Amount: 165 | ID: 4c1882f3-2038-4bef-b7af-4841997e21e7 | Status: pending
+[2025-12-12 20:07:43] Injected POLYGON invoice | Amount: 170 | ID: b737981d-4653-4731-8df8-8498983cdf3f | Status: pending
+[2025-12-12 20:07:47] Injected ETH invoice | Amount: 175 | ID: f59420e3-4c86-4608-9f0d-4ac522a55dd0 | Status: pending
+[2025-12-12 20:07:50] Injected BSC invoice | Amount: 180 | ID: d577b9b9-e7cd-429c-a557-546d8d981b2a | Status: pending
+[2025-12-12 20:07:53] Injected POLYGON invoice | Amount: 185 | ID: 44d5c2db-202a-437b-9096-783f7551e2ff | Status: pending
+[2025-12-12 20:07:57] Injected ETH invoice | Amount: 190 | ID: e89b3c3a-c55a-4bb3-9778-85a1ecbe3c4b | Status: pending
+[2025-12-12 20:08:00] Injected BSC invoice | Amount: 195 | ID: d3862261-f5de-47a4-b34c-041284f30377 | Status: pending
+[2025-12-12 20:08:03] Injected POLYGON invoice | Amount: 200 | ID: 18d153d0-451c-4b8e-b95a-95b17cca9b23 | Status: pending
+[2025-12-12 20:08:06] Injected ETH invoice | Amount: 205 | ID: d4b7ffeb-9bf4-4127-8553-ceb7d98eadb0 | Status: pending
+[2025-12-12 20:08:09] Injected BSC invoice | Amount: 210 | ID: d6abdf53-06c4-4267-adf2-1795c828dd42 | Status: pending
+[2025-12-12 20:08:13] Injected POLYGON invoice | Amount: 215 | ID: 52e670ca-85b5-4952-8618-645aee865009 | Status: pending
+[2025-12-12 20:08:16] Injected ETH invoice | Amount: 220 | ID: 6dd55964-e0bd-4767-8a93-92462e8100f3 | Status: pending
+[2025-12-12 20:08:19] Injected BSC invoice | Amount: 225 | ID: 05196a2b-5031-4eeb-a305-725ae377b0b3 | Status: pending
+[2025-12-12 20:08:22] Injected POLYGON invoice | Amount: 230 | ID: 64c83f2a-a875-43cb-8c52-7108d17c6061 | Status: pending
+[2025-12-12 20:08:25] Injected ETH invoice | Amount: 235 | ID:  | Status: 
+[2025-12-12 20:08:28] Injected BSC invoice | Amount: 240 | ID: c42124d6-0441-431b-a70b-0edba5752e3c | Status: pending
+[2025-12-12 20:08:32] Injected POLYGON invoice | Amount: 245 | ID: 731d549e-299a-4a98-8fe2-edbafe4bcd7e | Status: pending
+[2025-12-12 20:08:35] Injected ETH invoice | Amount: 250 | ID: a4296f5b-6598-4f4d-85bb-0958bb0be39b | Status: pending
+[2025-12-12 20:08:38] Injected BSC invoice | Amount: 255 | ID: 7217260b-01b9-4cde-8d67-f89161811f46 | Status: pending
+[2025-12-12 20:08:41] Injected POLYGON invoice | Amount: 260 | ID: 786763f6-0985-4cd8-88a9-cd2b7aaead9e | Status: pending
+[2025-12-12 20:08:45] Injected ETH invoice | Amount: 265 | ID: 3c182dd9-6928-40e0-97f9-d25a09505f22 | Status: pending
+[2025-12-12 20:08:48] Injected BSC invoice | Amount: 270 | ID: bbd5d5d3-2fce-476f-8c6a-1beb674eece9 | Status: pending
+=== Injection Complete ===
+Total Invoices Injected: 50
+Final Invoice List:
+[
+  {
+    "id": "c42124d6-0441-431b-a70b-0edba5752e3c",
+    "amount": 240,
+    "chain": "eth",
+    "status": "pending",
+    "created": 1765588108983
+  },
+  {
+    "id": "731d549e-299a-4a98-8fe2-edbafe4bcd7e",
+    "amount": 245,
+    "chain": "eth",
+    "status": "pending",
+    "created": 1765588112164
+  },
+  {
+    "id": "a4296f5b-6598-4f4d-85bb-0958bb0be39b",
+    "amount": 250,
+    "chain": "eth",
+    "status": "pending",
+    "created": 1765588115316
+  },
+  {
+    "id": "7217260b-01b9-4cde-8d67-f89161811f46",
+    "amount": 255,
+    "chain": "eth",
+    "status": "pending",
+    "created": 1765588118434
+  },
+  {
+    "id": "786763f6-0985-4cd8-88a9-cd2b7aaead9e",
+    "amount": 260,
+    "chain": "eth",
+    "status": "pending",
+    "created": 1765588121843
+  },
+  {
+    "id": "3c182dd9-6928-40e0-97f9-d25a09505f22",
+    "amount": 265,
+    "chain": "eth",
+    "status": "pending",
+    "created": 1765588125288
+  },
+  {
+    "id": "bbd5d5d3-2fce-476f-8c6a-1beb674eece9",
+    "amount": 270,
+    "chain": "eth",
+    "status": "pending",
+    "created": 1765588128471
+  }
+]

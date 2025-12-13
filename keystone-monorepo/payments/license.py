@@ -1,5 +1,3 @@
-# Success comes from God; the code is just stewardship, built around truth until it is found.
-# Success comes from God; the code is just stewardship, built around truth until it is found.
 import time, hmac, hashlib, os, json, pathlib
 
 STORE=os.path.expanduser("~/KeystoneCreatorSuite/keystone-payments")

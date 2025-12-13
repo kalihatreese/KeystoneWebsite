@@ -1,5 +1,3 @@
-Success comes from God; the code is just stewardship, built around truth until it is found.
-Success comes from God; the code is just stewardship, built around truth until it is found.
 # HUMAN-ACTION CHECKLIST (Keystone FULL)
 
 Minimum manual steps to enable production features:

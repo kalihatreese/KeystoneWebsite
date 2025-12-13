@@ -1,77 +1,64 @@
-# Success comes from God; the code is just stewardship, built around truth until it is found.
-# Success comes from God; the code is just stewardship, built around truth until it is found.
-const express = require('express');
-const { createOrder, captureOrder } = require('./paypal-checkout');
-const blessed = require('blessed');
-const contrib = require('blessed-contrib');
-require('dotenv').config();
+const express = require("express");
+const fs = require("fs");
+const crypto = require("crypto");
+const path = require("path");
 
 const app = express();
+const PORT = process.env.PORT || 3001;
+const INVOICE_FILE = "./invoices.json";
+
 app.use(express.json());
-const PORT = process.env.PORT || 3000;
+const dashboard = require("./dashboard");
+app.use("/", dashboard);
 
-// --- Dashboard ---
-const screen = blessed.screen();
-const grid = new contrib.grid({ rows: 12, cols: 12, screen: screen });
-const line = grid.set(0, 0, 6, 12, contrib.line, {
-label: 'Trinity Prices',
-showLegend: true,
-style: { line: 'green', text: 'white', baseline: 'black' }
-});
-const table = grid.set(6, 0, 6, 12, contrib.table, {
-keys: true,
-fg: 'white',
-label: 'Positions',
-columnSpacing: 2,
-columnWidth: [10, 10, 10, 10]
-});
-setInterval(() => {
-line.setData([{ title: 'Asset', x: ['T1','T2','T3'], y: [Math.random()*10, Math.random()*10, Math.random()*10] }]);
-table.setData({ headers: ['Sym','Qty','Price','P/L'], data: [['AAPL','10','151','+1.5'],['TSLA','5','320','-2.0']] });
-screen.render();
-}, 1000);
-screen.key(['escape','q','C-c'], () => process.exit(0));
+app.use(express.static(path.join(__dirname, "public")));
 
-// --- PayPal Routes ---
-app.post('/create-order', async (req, res) => {
-try {
-const { amount } = req.body;
-const order = await createOrder(amount || "50.00");
-res.json(order);
-} catch (err) {
-console.error(err);
-res.status(500).json({ error: err.message });
+function loadInvoices() {
+  if (!fs.existsSync(INVOICE_FILE)) return [];
+  try {
+    return JSON.parse(fs.readFileSync(INVOICE_FILE));
+  } catch (error) {
+    console.error("Error reading or parsing invoices.json:", error.message);
+    return [];
+  }
 }
-});
 
-app.post('/capture-order', async (req, res) => {
-try {
-const { orderId } = req.body;
-const capture = await captureOrder(orderId);
-res.json(capture);
-} catch (err) {
-console.error(err);
-res.status(500).json({ error: err.message });
+function saveInvoices(data) {
+  fs.writeFileSync(INVOICE_FILE, JSON.stringify(data, null, 2));
 }
+
+app.post("/api/machine/invoice", (req, res) => {
+  const { amount, client, propertyID } = req.body || {};
+
+  // Basic input validation/check
+  if (typeof amount !== 'number' || amount <= 0) {
+    return res.status(400).json({ error: "Invalid or missing 'amount' field." });
+  }
+  if (!client || !propertyID) {
+    return res.status(400).json({ error: "Missing 'client' or 'propertyID' field." });
+  }
+
+  const invoice = {
+    id: crypto.randomUUID(),
+    amount: amount,
+    status: "pending",
+    created: Date.now(),
+    intent: {
+      client: client,
+      propertyID: propertyID,
+      role: "Veritas Escort"
+    }
+  };
+
+  const invoices = loadInvoices();
+  invoices.push(invoice);
+  saveInvoices(invoices);
+
+  console.log("[Veritas] Invoice created:", invoice);
+  res.json(invoice);
 });
 
-// --- Start Server ---
-app.listen(PORT, () => console.log("Trinity running on port ${PORT}"));
-
-// --- Infura Module ---
-const { getLatestBlock } = require('./infura');
-
-// Live Ethereum Block Display
-const blockLine = grid.set(0, 0, 2, 12, contrib.line, {
-  label: 'Ethereum Latest Block',
-  showLegend: true,
-  style: { line: 'cyan', text: 'white', baseline: 'black' }
+// Start the server
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`[Veritas] Trinity Payment Machine API listening on http://0.0.0.0:${PORT}`);
 });
-
-setInterval(async () => {
-  const latestBlock = await getLatestBlock();
-  blockLine.setData([
-    { title: 'ETH', x: ['T1'], y: [latestBlock || 0] }
-  ]);
-  screen.render();
-}, 5000); // update every 5 seconds

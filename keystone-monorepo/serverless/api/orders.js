@@ -1,5 +1,3 @@
-# Success comes from God; the code is just stewardship, built around truth until it is found.
-# Success comes from God; the code is just stewardship, built around truth until it is found.
 /**
  * Vercel Serverless endpoint: /api/orders
  * POST payload for ETH payments:

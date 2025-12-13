@@ -1,5 +1,3 @@
-# Success comes from God; the code is just stewardship, built around truth until it is found.
-# Success comes from God; the code is just stewardship, built around truth until it is found.
 from fastapi import FastAPI, Request, HTTPException
 from fastapi.responses import JSONResponse
 import os, json, time, hmac, hashlib, secrets

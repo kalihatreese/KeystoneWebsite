@@ -1,0 +1,5 @@
+[
+  { "client": "John Doe", "propertyID": "PROP-1001" },
+  { "client": "Jane Smith", "propertyID": "PROP-1002" },
+  { "client": "Alice Johnson", "propertyID": "PROP-1003" }
+]

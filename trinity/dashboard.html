@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Trinity Multi-Chain Dashboard</title>
+<style>
+body { font-family: Arial, sans-serif; background: #111; color: #eee; padding: 20px; }
+h1 { color: #0f0; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th, td { padding: 10px; border: 1px solid #555; text-align: left; }
+.pending { color: #ff0; }
+.paid { color: #0f0; }
+</style>
+</head>
+<body>
+<h1>Trinity Multi-Chain Dashboard</h1>
+<table>
+<thead>
+<tr><th>Invoice ID</th><th>User</th><th>Wallet</th><th>Amount</th><th>Chain</th><th>Status</th></tr>
+</thead>
+<tbody id="invoiceTable"></tbody>
+</table>
+<script>
+async function fetchInvoices() {
+    try {
+        const res = await fetch('/api/invoices');
+        const data = await res.json();
+        const tbody = document.getElementById('invoiceTable');
+        tbody.innerHTML = '';
+        data.forEach(inv => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `<td>${inv.invoiceId}</td>
+                            <td>${inv.username}</td>
+                            <td>${inv.wallet}</td>
+                            <td>${inv.amount}</td>
+                            <td>${inv.chain}</td>
+                            <td class="${inv.status}">${inv.status}</td>`;
+            tbody.appendChild(tr);
+        });
+    } catch(e) { console.error(e); }
+}
+setInterval(fetchInvoices, 5000);
+fetchInvoices();
+</script>
+</body>
+</html>

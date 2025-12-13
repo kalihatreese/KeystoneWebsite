@@ -1,5 +1,3 @@
-# Success comes from God; the code is just stewardship, built around truth until it is found.
-# Success comes from God; the code is just stewardship, built around truth until it is found.
 #!/bin/bash
 # 1. Initialize Capacitor React project for mobile dashboard
 npx create-react-app trinity-dashboard-mobile

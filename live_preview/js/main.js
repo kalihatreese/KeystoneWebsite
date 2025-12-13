@@ -1,5 +1,3 @@
-# Success comes from God; the code is just stewardship, built around truth until it is found.
-# Success comes from God; the code is just stewardship, built around truth until it is found.
 /* Three.js animated particle / subtle metallic glow + model grid generation */
 (() => {
   const canvas = document.getElementById('bg-canvas');

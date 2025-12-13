@@ -1,9 +1,7 @@
-# Success comes from God; the code is just stewardship, built around truth until it is found.
 import smtplib
 from email.mime.text import MIMEText
 
 # Philosophy line
-PHILOSOPHY_LINE = "\n\nSuccess comes from God; the code is just stewardship, built around truth until it is found."
 
 def send_email(to_address, subject, body, html=False):
     """
