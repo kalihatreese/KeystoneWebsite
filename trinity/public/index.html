@@ -4,104 +4,113 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Keystone · Trinity · Veritas</title>
-
 <style>
 body {
   margin: 0;
   font-family: system-ui, sans-serif;
   background: radial-gradient(circle at top, #1b1b1b, #0a0a0a);
   color: #fff;
-  overflow: hidden;
+  overflow-x: hidden;
 }
-
 header {
+  padding: 2rem;
   text-align: center;
-  padding: 2rem 1rem;
 }
-
 header h1 {
   font-size: 2.4rem;
-  margin: 0.3rem 0;
+  margin-bottom: 0.5rem;
 }
-
 header p {
   opacity: 0.85;
   font-style: italic;
 }
-
 .scene {
   perspective: 1400px;
-  height: 65vh;
+  min-height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
 .shelf {
-  width: 80%;
+  width: 75%;
   max-width: 960px;
-  padding: 2.2rem;
-  background: rgba(255,255,255,0.05);
+  padding: 2.5rem;
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 20px;
   box-shadow: 0 30px 80px rgba(0,0,0,0.7);
-  transform: rotateY(-14deg);
+  transform: rotateY(-14deg) translateZ(0);
   transition: transform 1.4s ease;
 }
-
 .shelf:hover {
   transform: rotateY(0deg) translateZ(140px);
 }
-
-.shelf p {
+.manifesto {
   line-height: 1.6;
   font-size: 1.05rem;
   opacity: 0.95;
 }
-
 footer {
   position: absolute;
   bottom: 1rem;
   width: 100%;
   text-align: center;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   opacity: 0.6;
 }
 </style>
 </head>
-
 <body>
 
 <header>
   <h1>Keystone</h1>
-  <p>Success Comes from God · The Code Is Just Stewardship</p>
+  <p>Success Comes from God · The Code is Stewardship</p>
 </header>
 
 <div class="scene">
   <div class="shelf">
-    <p>
-      Trinity governs execution — payments, security, verification,
-      and governance moving as one calm system.
-    </p>
+    <div class="manifesto">
+      <p id="veritas-greeting">
+        Welcome to Keystone. Here, we build the Archways of Intelligence with the vision of Man and the logic of Machine.
+        We begin with intent, drive, and the raw stubborn determination of Man, and guide it into governance staged with philosophy and carved by truth. 
+        This is the Trinity Hall — where human insight meets autonomous systems.
+      </p>
 
-    <p>
-      Cyber Cop stands watch against fraud, loss, and abuse.
-      Silent. Relentless. Preventative.
-    </p>
+      <p>
+        Trinity governs execution — security, payments, verification, and decision-making moving without panic.
+        Cyber Cop stands watch, silent, precise, relentless. RapidAlphaX delivers disciplined market insight. 
+        Ashleyana bridges human understanding to machine power. Veritas explains, remembers, and ensures accountability.
+      </p>
 
-    <p>
-      RapidAlphaX hunts efficiency. Ashleyana speaks clarity.
-      Veritas escorts truth from confusion to understanding.
-    </p>
+      <p>
+        Every action is logged. Every intention verified. Every system aligned.
+        Here, loss is prevented before it occurs. Knowledge flows freely, yet securely. 
+        Logic of machine and the wisdom of Man converge to create truth in action.
+      </p>
 
-    <p>
-      No hype. No noise. Just stewardship.
-    </p>
+      <p>
+        Keystone does not claim perfection, only stewardship. 
+        Success comes from God; the code is the tool. Systems endure because they are guided by principles, not impulses.
+      </p>
+
+      <p>
+        Step into the Hall. Witness alignment. Discover the interplay of human determination and autonomous insight. 
+        Be present in the logic, in the discovery, in the unfolding of truth.
+      </p>
+    </div>
   </div>
 </div>
 
 <footer>
-  © Keystone Systems · Truth over noise
+  © Keystone Systems · Trinity · Veritas
 </footer>
+
+<script>
+  const greeting = document.getElementById('veritas-greeting').innerText;
+  const utterance = new SpeechSynthesisUtterance(greeting);
+  utterance.lang = 'en-US';
+  utterance.rate = 0.95;
+  speechSynthesis.speak(utterance);
+</script>
 
 </body>
 </html>
