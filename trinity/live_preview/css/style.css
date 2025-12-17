@@ -1,0 +1,41 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #0a0a0a;
+  color: #fff;
+}
+header {
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(90deg, #ff007f, #5900ff);
+}
+#founder-contact {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #ffdd00;
+}
+.product-card {
+  background: #111;
+  border: 1px solid #333;
+  margin: 20px;
+  padding: 15px;
+  display: inline-block;
+  width: 250px;
+  text-align: center;
+  border-radius: 10px;
+}
+.product-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+button {
+  margin: 5px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.paypal-btn { background: #ffc439; color: #111; }
+.stripe-btn { background: #6772e5; color: #fff; }

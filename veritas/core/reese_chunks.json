@@ -1,0 +1,10 @@
+[
+  {
+    "id": "semantic_knowledge.txt_chunk_0",
+    "source": "core/semantic_knowledge.txt",
+    "start": 0,
+    "end": 144,
+    "text": "# Insert all semantic search notes, Elastic docs, Trinity explanations here\n# Use triple quotes \"\"\" or EOF style to preserve multi-line content\n",
+    "digest": "ba98f94771568a7caa08cced551d7b5087a926f224b416beda66d57489da136c"
+  }
+]

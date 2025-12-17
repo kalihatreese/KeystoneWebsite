@@ -1,0 +1,5 @@
+name = "OverlordWorker"
+type = "javascript"
+account_id = "2d1c3a2857a48841ac969eab407aa344"
+workers_dev = true
+compatibility_date = "2025-12-03"

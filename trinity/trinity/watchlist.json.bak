@@ -1,0 +1,23 @@
+[
+  {"symbol":"AAPL","change":-0.61,"price":279},
+  {"symbol":"IBM","change":-0.16,"price":307.50},
+  {"symbol":"GOOGL","change":0.91,"price":320.50},
+  {"symbol":"BTC","change":-3.47,"price":39.55},
+  {"symbol":"ETH","change":-3.81,"price":28.52},
+  {"symbol":"TRON","change":-7.50,"price":1.85},
+  {"symbol":"USD","change":1.04,"price":54.62},
+  {"symbol":"TEM","change":0.28,"price":76.54},
+  {"symbol":"CLS","change":0.70,"price":325.05},
+  {"symbol":"RNST","change":0.44,"price":36.31},
+  {"symbol":"APP","change":1.42,"price":693.49},
+  {"symbol":"CVNA","change":10.07,"price":439},
+  {"symbol":"LAZR","change":-9.50,"price":0.9322},
+  {"symbol":"TMUS","change":0.93,"price":209.9504},
+  {"symbol":"BYDDF","change":0,"price":0},
+  {"symbol":"LOPE","change":-1.50,"price":153.39},
+  {"symbol":"ACCD","change":0,"price":0},
+  {"symbol":"AKRO","change":-0.16,"price":54.54},
+  {"symbol":"COKE","change":2.21,"price":169.37},
+  {"symbol":"SEB","change":0.17,"price":4400.84},
+  {"symbol":"RSI","change":-1.45,"price":0}
+]

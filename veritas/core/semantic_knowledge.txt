@@ -1,0 +1,2 @@
+# Insert all semantic search notes, Elastic docs, Trinity explanations here
+# Use triple quotes """ or EOF style to preserve multi-line content

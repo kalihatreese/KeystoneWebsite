@@ -1,0 +1,19 @@
+{
+  "reese": {
+    "ma_fast": 10,
+    "ma_slow": 30,
+    "risk_fraction": 0.01,
+    "reward_r": 1.5,
+    "max_bars_hold": 12
+  },
+  "simons": {
+    "ma_fast": 8,
+    "ma_slow": 21,
+    "risk_fraction": 0.0075,
+    "reward_r": 2.0,
+    "max_bars_hold": 16,
+    "atr_length": 14,
+    "atr_min": 0.0005,
+    "atr_max": 0.005
+  }
+}

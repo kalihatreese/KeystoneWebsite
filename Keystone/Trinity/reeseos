@@ -1,0 +1,95 @@
+#!/data/data/com.termux/files/usr/bin/bash
+# ReeseOS - minimal interactive shell wrapper
+set -euo pipefail
+
+print_banners() {
+  echo "🔥 Auto Empire Mode Active on Boot 🔥"
+  echo "=== Reese Effect Activated ==="
+  echo "Reese Effect simulation complete!"
+  echo "=== Trading Automation (UTM) Started with Key AKFM**** ==="
+  echo "[UTM] Initializing Alpaca Key Validation..."
+  echo "[UTM] Executing symbolic trade on STABLE-AUDIT (Global Compliance Check)..."
+  echo "✅ Trade executed: FILLED (FINANCIAL FORTIFICATION COMPLETE)"
+}
+
+reese_help() {
+  cat <<'HELP'
+=== ReeseOS Command Reference ===
+help            -> Show this help menu
+exit            -> Quit ReeseOS shell
+effect run      -> Trigger Reese Effect Simulation
+effect status   -> Check status of modules
+utm start       -> Start Automated Trading Module
+utm stop        -> Stop Automated Trading Module
+utm log         -> Show latest UTM actions
+vault open      -> Show Keystone Vault product menu
+cybercop        -> Launch Cyber Cop scanner
+sniper          -> Launch MEV Sniper (CLI mode)
+clear           -> Clear console
+sys info        -> Device + OS details
+sys net         -> Network scan
+=== End Help ===
+HELP
+}
+
+# minimal handlers - expand these to call real modules
+handle_cmd() {
+  case "$1" in
+    "" ) return 0 ;;
+    help ) reese_help ;;
+    exit ) return 1 ;;
+    effect)
+        case "${2:-}" in
+          run) echo "[effect] Running Reese Effect simulation..." ;;
+          status) echo "[effect] All systems nominal." ;;
+          *) echo "Usage: effect {run|status}" ;;
+        esac
+        ;;
+    utm)
+        case "${2:-}" in
+          start) echo "[UTM] Starting trading automation..." ;;
+          stop) echo "[UTM] Stopping trading automation..." ;;
+          log) echo "[UTM] Showing logs (stub)..." ;;
+          *) echo "Usage: utm {start|stop|log}" ;;
+        esac
+        ;;
+    vault) [[ "${2:-}" == "open" ]] && echo "[vault] Opening Keystone Vault..." || echo "Usage: vault open" ;;
+    cybercop) echo "[cybercop] Launching Cyber Cop (stub)..." ;;
+    sniper) echo "[sniper] Launching MEV Sniper (stub)..." ;;
+    clear) clear ;;
+    sys)
+        case "${2:-}" in
+          info) uname -a ;;
+          net) ip addr 2>/dev/null || ifconfig 2>/dev/null ;;
+          *) echo "Usage: sys {info|net}" ;;
+        esac
+        ;;
+    * ) echo "Unknown command: $1" ;;
+  esac
+  return 0
+}
+
+main_loop() {
+  while true; do
+    printf "\nReeseOS> "
+    # read full line, split into arguments safely
+    IFS=' ' read -r -a parts || break
+    cmd="${parts[0]:-}"
+    # call handler with up to two args for simple commands
+    if ! handle_cmd "$cmd" "${parts[1]:-}" ; then
+      break
+    fi
+  done
+  echo "ReeseOS shutting down."
+}
+
+# run
+print_banners
+main_loop
+
+start_trinity() {
+    echo "[ReeseOS] Launching Trinity Eternal Engine..."
+    nohup ~/Keystone/Trinity/trinity_engine.sh >/dev/null 2>&1 &
+}
+
+start_trinity

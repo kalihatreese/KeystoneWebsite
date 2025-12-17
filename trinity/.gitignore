@@ -1,1 +1,5 @@
+<<<<<<< HEAD
+__pycache__/\n.env\n*.pyc\n*.log\ndist/\nbuild/
+=======
+>>>>>>> 909336f (Deploy Keystone Trinity)
 .vercel

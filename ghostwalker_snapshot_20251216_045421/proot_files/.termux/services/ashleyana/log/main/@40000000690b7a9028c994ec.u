@@ -1,0 +1,4 @@
+2025-11-04_23:42:04.34627 INFO:     127.0.0.1:60138 - "GET /healthz HTTP/1.1" 404 Not Found
+2025-11-04_23:42:04.36221 INFO:     127.0.0.1:60148 - "GET /readyz HTTP/1.1" 404 Not Found
+2025-11-04_23:42:04.39297 INFO:     127.0.0.1:60150 - "GET /plugins HTTP/1.1" 404 Not Found
+2025-11-04_23:42:04.43939 INFO:     127.0.0.1:60164 - "POST /plugins/example/call/ping HTTP/1.1" 404 Not Found

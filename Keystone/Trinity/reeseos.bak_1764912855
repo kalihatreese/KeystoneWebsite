@@ -1,0 +1,11 @@
+
+while true; do
+  printf "ReeseOS> "
+  read cmd
+  case "$cmd" in
+    help) echo "ReeseOS Help Active";;
+    exit) break;;
+    *) echo "Unknown command: $cmd";;
+  esac
+done
+

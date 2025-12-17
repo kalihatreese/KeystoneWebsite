@@ -1,0 +1,49 @@
+# Minimal Termux bashrc
+export TERM=xterm-256color
+export PS1="\u@\h:\w$ "
+[ -f ~/.bash_aliases ] && . ~/.bash_aliases
+# Keep your GitHub token load (optional):
+[ -f ~/.github_token ] && export GITHUB_TOKEN="$(cat ~/.github_token)"
+
+# --- Colorful prompt + sensible colors ---
+export TERM=xterm-256color
+# Custom host label instead of Android's 'localhost'
+export PROMPT_HOST="ReeseDroid"
+
+# Colors: user@host:cwd$
+PS1='\[\e[1;36m\]\u\[\e[0m\]@\[\e[1;35m\]'"${PROMPT_HOST}"'\[\e[0m\]:\[\e[1;33m\]\w\[\e[0m\]\$ '
+
+# Colorize common tools
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+# [keystone] disabled: cd ~/Autotrend_vault_consolidate
+# [keystone] disabled: cd ~/Autotrend_vault_consolidate
+# [keystone] disabled: cd ~/Autotrend_vault_consolidate
+
+# [keystone] disabled: cd ~/Autotrend_vault_consolidate
+[ -f .venv/bin/activate ] && . .venv/bin/activate
+pm2 resurrect >/dev/null 2>&1
+
+# [keystone] disabled: cd ~/.km_market_fix
+# [keystone] lifeforce loader
+if [ -f "$HOME/.keystone/lifeforce.env" ]; then
+  # shellcheck disable=SC2046
+  export $(grep -E '^[A-Za-z_][A-Za-z0-9_]*=' "$HOME/.keystone/lifeforce.env" | xargs)
+fi
+export CHECKOUT_URL="PASTE_YOUR_REAL_CHECKOUT_URL_HERE"
+
+# Keystone AutoBoot
+cd ~/keystone-storefront/Autotrend_vault/keystone-kash-store
+if ! pgrep -f vault_api.py >/dev/null; then
+  echo "[AUTOBOOT] Starting Keystone Autotrend full stack..."
+  bash bootstrap.sh
+else
+  echo "[AUTOBOOT] Services already running."
+fi
+
+source ~/Ashleyana/.venv/bin/activate && nohup uvicorn local_app:app --host 0.0.0.0 --port 8000 > ~/Ashleyana/server.log 2>&1 &
+nohup python3 ~/Ashleyana/lab/auto_store_manager.py > ~/Ashleyana/lab/manager.log 2>&1 &
+nohup python3 ~/Ashleyana/lab/auto_store_manager.py > ~/Ashleyana/lab/manager.log 2>&1 &
+source ~/Ashleyana/.venv/bin/activate && nohup uvicorn ~/Ashleyana/local_app:app --host 0.0.0.0 --port 8000 > ~/Ashleyana/server.log 2>&1 & sleep 5 && nohup python3 ~/Ashleyana/lab/auto_store_manager.py > ~/Ashleyana/lab/manager.log 2>&1 &

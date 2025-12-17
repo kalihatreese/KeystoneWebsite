@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Keystone 50/50 Store</title>
+<script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.min.js"></script>
+<style>
+  body { font-family: Arial, sans-serif; background-color:#f5f5f5; color:#222; }
+  #store { display: flex; flex-wrap: wrap; gap: 20px; padding: 20px; }
+  .item { border: 1px solid #ccc; padding: 10px; width: 180px; text-align: center; border-radius: 8px; background:#fff; }
+  .item img { width: 150px; height: 150px; object-fit: contain; }
+  button { background-color: #007bff; color: white; border: none; padding: 8px 12px; border-radius: 5px; cursor: pointer; }
+  button:hover { background-color: #0056b3; }
+</style>
+</head>
+<body>
+<h1>Keystone 50/50 Store</h1>
+<div id="store"></div>
+<script>
+const storeData = {
+  generalItems: [
+    { id: 1, name: 'Item A', priceEth: '0.05', imageUrl: 'images/itemA.png', deliveryScript: 'deliverItemA()' },
+    { id: 2, name: 'Item B', priceEth: '0.08', imageUrl: 'images/itemB.png', deliveryScript: 'deliverItemB()' }
+    // Add up to 50 general items here
+  ],
+  electronics: [
+    { id: 101, name: 'Gadget X', priceEth: '0.1', imageUrl: 'images/gadgetX.png', deliveryScript: 'deliverGadgetX()' }
+    // Add up to 50 electronics items here
+  ]
+};
+
+const storeDiv = document.getElementById('store');
+
+function renderItems(items) {
+  storeDiv.innerHTML = '';
+  items.forEach(item => {
+    const itemDiv = document.createElement('div');
+    itemDiv.className = 'item';
+    itemDiv.innerHTML = `
+      <img src="${item.imageUrl}" alt="${item.name}">
+      <h3>${item.name}</h3>
+      <p>${item.priceEth} ETH</p>
+      <button onclick="buyItem(${item.id})">Buy Now</button>
+    `;
+    storeDiv.appendChild(itemDiv);
+  });
+}
+
+function buyItem(itemId) {
+  const item = [...storeData.generalItems, ...storeData.electronics].find(i => i.id === itemId);
+  payWithMetaMask(item);
+}
+
+async function payWithMetaMask(item) {
+  if (!window.ethereum) return alert('Install MetaMask!');
+  const provider = new ethers.providers.Web3Provider(window.ethereum);
+  const signer = provider.getSigner();
+  try {
+    const tx = await signer.sendTransaction({
+      to: '0xc22f0db6ba4935083e9d69a5defd7c32d76228bf',
+      value: ethers.utils.parseEther(item.priceEth)
+    });
+    console.log('Transaction sent:', tx.hash);
+    await tx.wait();
+    alert('Payment confirmed for ' + item.name + '!');
+    window[item.deliveryScript]();
+  } catch (err) {
+    console.error(err);
+    alert('Payment failed or canceled');
+  }
+}
+
+// Placeholder delivery scripts
+window.deliverItemA = () => alert('Item A delivered!');
+window.deliverItemB = () => alert('Item B delivered!');
+window.deliverGadgetX = () => alert('Gadget X delivered!');
+
+// Initial render
+renderItems([...storeData.generalItems, ...storeData.electronics]);
+</script>
+</body>
+</html>

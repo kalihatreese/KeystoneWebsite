@@ -1,0 +1,10 @@
+name = "keystone-minimal-site"
+main = "src/index.js"
+compatibility_date = "2025-12-03"
+
+[site]
+bucket = "./public"
+
+[[kv_namespaces]]
+binding = "__STATIC_CONTENT"
+# ID field removed: forcing wrangler to find or create the binding automatically
