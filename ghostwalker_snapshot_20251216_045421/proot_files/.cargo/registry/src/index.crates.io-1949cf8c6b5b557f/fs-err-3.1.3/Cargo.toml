@@ -60,7 +60,7 @@ name = "fs_err"
 path = "src/lib.rs"
 
 [dependencies.tokio]
-version = "1.21"
+version = "1.43"
 features = ["fs"]
 optional = true
 default-features = false
