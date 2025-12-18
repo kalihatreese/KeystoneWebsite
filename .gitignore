@@ -1,2 +1,7 @@
-__pycache__/\n.env\n*.pyc\n*.log\ndist/\nbuild/
-.vercel
+node_modules
+backups
+*.zip
+__pycache__
+*.log
+gdrive
+html_backup*

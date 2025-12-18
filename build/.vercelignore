@@ -1,0 +1,6 @@
+node_modules
+build/static/media/*
+veritas_assets/*
+*.jsonl
+*.zip
+trinity_backup/*

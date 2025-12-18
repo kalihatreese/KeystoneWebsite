@@ -1,0 +1,1 @@
+async function fetchTop50(){const categories=["general","electronics"];let results=[];for(const cat of categories){for(let i=0;i<50;i++){results.push({category:cat,title:`Item ${i+1} ${cat}`,price:Math.floor(Math.random()*1000)/10,url:"#",image:"https://via.placeholder.com/150"})}}return results}
