@@ -129,5 +129,17 @@ return {init};
 document.addEventListener('DOMContentLoaded',()=>{SceneManager.init();AudioEngine.init();});
 </script>
 
-</body>
+<script src="voice-engine.js"></script></body>
 </html>
+<script>
+function triggerVeritasPulse() {
+  const core = scene.getObjectByName('GroundPlane');
+  gsap.to(core.material, {
+    emissiveIntensity: 10,
+    duration: 0.5,
+    yoyo: true,
+    repeat: 5,
+    ease: "sine.inOut"
+  });
+}
+</script>
