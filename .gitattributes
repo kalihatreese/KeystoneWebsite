@@ -1,1 +1,4 @@
 *.jsonl filter=lfs diff=lfs merge=lfs -text
+ghostwalker_index_*.jsonl filter=lfs diff=lfs merge=lfs -text
+ghostwalker_snapshot_*.zip filter=lfs diff=lfs merge=lfs -text
+veritas_assets/shadowx_installed/* filter=lfs diff=lfs merge=lfs -text
