@@ -7,9 +7,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <style>
         body { margin: 0; background: #000510; color: #00ffff; font-family: 'Courier New', monospace; overflow: hidden; }
-        canvas { display: block; position: fixed; top: 0; left: 0; z-index: 1; }
+        canvas { filter: drop-shadow(0 0 10px #0ff) hue-rotate(20deg); display: block; position: fixed; top: 0; left: 0; z-index: 1; }
         #interface { position: relative; z-index: 2; padding: 20px; pointer-events: none; height: 100vh; display: flex; flex-direction: column; justify-content: space-between; }
-        .terminal-box { background: rgba(0,10,30,0.85); border: 1px solid #00ffff; padding: 15px; pointer-events: auto; box-shadow: 0 0 15px rgba(0,255,255,0.2); }
+        .terminal-box { box-shadow: 0 0 20px rgba(0,255,255,0.4), inset 0 0 10px rgba(0,255,255,0.2); background: rgba(0,10,30,0.85); border: 1px solid #00ffff; padding: 15px; pointer-events: auto; box-shadow: 0 0 15px rgba(0,255,255,0.2); }
         #status { font-size: 10px; color: #5588aa; text-transform: uppercase; letter-spacing: 2px; }
     </style>
 </head>

@@ -29,3 +29,15 @@ try {
 } catch (error) {
     console.error("\n❌ DIAGNOSTIC FAILED:", error.message);
 }
+
+// 4. DNS / Domain Health Check
+console.log("\n[4/4] Checking Domain Propagation...");
+try {
+    const domainCheck = execSync('npx wrangler pages domain list --project-name="keystone-aiml"').toString();
+    console.log("📡 Domain Status:\n" + domainCheck);
+    if (!domainCheck.includes('keystoneaiml.com')) {
+        console.log("⚠️ WARNING: keystoneaiml.com is NOT linked to this project.");
+    }
+} catch (e) {
+    console.log("❌ Could not verify domains. Check your Wrangler login.");
+}
