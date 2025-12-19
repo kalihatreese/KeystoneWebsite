@@ -21,3 +21,6 @@
 [2025-12-18 17:22:33] Trinity started successfully
 [dotenv@17.2.3] injecting env (4) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
 [Veritas] Trinity UI live on http://127.0.0.1:3001
+[2025-12-19 11:20:09] Trinity started successfully
+[dotenv@17.2.3] injecting env (4) from .env -- tip: 📡 add observability to secrets: https://dotenvx.com/ops
+[Veritas] Trinity UI live on http://127.0.0.1:3001

@@ -1,2 +1,88 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Keystone · Trinity · Veritas</title><script src="https://www.gstatic.com/external_hosted/threejs/three.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script><script src="https://unpkg.com/three@0.128.0/examples/js/postprocessing/EffectComposer.js"></script><script src="https://unpkg.com/three@0.128.0/examples/js/postprocessing/RenderPass.js"></script><script src="https://unpkg.com/three@0.128.0/examples/js/postprocessing/ShaderPass.js"></script><script src="https://unpkg.com/three@0.128.0/examples/js/postprocessing/UnrealBloomPass.js"></script><script src="https://unpkg.com/three@0.128.0/examples/js/postprocessing/OutputPass.js"></script><style>canvas{transform:translateZ(0);backface-visibility:hidden;}canvas{transform:translateZ(0);backface-visibility:hidden;}body{margin:0;font-family:system-ui,sans-serif;background:#000510;color:#fff;overflow:hidden;background:#000} canvas{position:absolute;top:0;left:0;z-index:1}#ui-overlay{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;display:flex;flex-direction:column;justify-content:space-between;padding:20px;box-sizing:border-box;z-index:10;pointer-events:none;;pointer-events:none;}#veritas-voice-box{align-self:flex-start;background:rgba(0,10,30,.7);border:1px solid #0ff;padding:10px 15px;border-radius:5px;max-width:300px;font-size:1.1em;text-shadow:0 0 5px #0ff;opacity:0;transition:opacity 1s;pointer-events:none}.portal-label{position:absolute;padding:5px 10px;background:rgba(0,0,0,.6);border:1px solid #08f;color:#0ff;font-size:.9em;cursor:pointer;pointer-events:auto;transition:background .3s,color .3s;transform:translate(-50%,-50%)}.portal-label:hover{background:rgba(0,150,255,.8);color:#fff;text-shadow:0 0 8px #fff}</style><link href="/static/css/main.d9237de4.css" rel="stylesheet"></head><body><div id="ui-overlay"><div id="veritas-voice-box">"Welcome Seeker. You are entering the Keystone Trinity. Here, human drive, discovery, and stubborn pursuit meet the logic of machine. Each fragment, each portal, carries a piece of our collective truth, grounded in math, philosophy, and science, framed by Kobalt blue and metallic grey."</div></div><script>const PRIMARY_COLOR=65535,SECONDARY_COLOR=11184810,EMISSIVE_INTENSITY=3,AudioEngine=function(){let e,t,n;function i(){e||(e=new(window.AudioContext||window.webkitAudioContext),t=e.listener,n=e.createPanner(),n.pannerModel="HRTF",n.distanceModel="inverse",n.refDistance=1,n.maxDistance=1e3,n.coneOuterGain=0,n.connect(e.destination),function(){if(!e)return;const t=e.createOscillator(),i=e.createGain();t.type="sawtooth",t.frequency.setValueAtTime(80,e.currentTime),i.gain.setValueAtTime(.02,e.currentTime),t.connect(i).connect(n),t.start(),t.stop(e.currentTime+4);const o=document.getElementById("veritas-voice-box");o.style.opacity="1",setTimeout(()=>{o.style.opacity="0"},3500)}())}return{init:function(){window.addEventListener("click",i,{once:!0})},updateListenerPosition:function(n,i,o){t&&(t.positionX.setValueAtTime(n,e.currentTime),t.positionY.setValueAtTime(i,e.currentTime),t.positionZ.setValueAtTime(o,e.currentTime))},updateVeritasPosition:function(t,i,o){n&&(n.positionX.setValueAtTime(t,e.currentTime),n.positionY.setValueAtTime(i,e.currentTime),n.positionZ.setValueAtTime(o,e.currentTime))}}}(),ParticleEngine=function(){let e;const t=2e3,n=new THREE.BufferGeometry,i=new Float32Array(6e3);for(let e=0;e<6e3;e++)i[e]=50*(Math.random()-.5);n.setAttribute("position",new THREE.BufferAttribute(i,3));const o=new THREE.PointsMaterial({color:65535,size:.05,blending:THREE.AdditiveBlending,transparent:!0,sizeAttenuation:!0,map:function(){const e=document.createElement("canvas");e.width=16,e.height=16;const t=e.getContext("2d"),n=t.createRadialGradient(8,8,0,8,8,8);return n.addColorStop(0,"rgba(0,255,255,1)"),n.addColorStop(1,"rgba(0,0,0,0)"),t.fillStyle=n,t.fillRect(0,0,16,16),new THREE.CanvasTexture(e)}()});return{init:function(t){e=new THREE.Points(n,o),t.add(e)},animate:function(n){if(!e)return;const i=e.geometry.attributes.position.array,o=.005;for(let e=0;e<t;e++)i[3*e+0]+=Math.sin(5e-4*n+i[3*e+1])*o,i[3*e+1]+=Math.cos(4e-4*n+i[3*e+2])*o,i[3*e+2]+=.01,i[3*e+2]>10&&(i[3*e+2]=-40);e.geometry.attributes.position.needsUpdate=!0}}}(),RoomDefinitions={Trinity:{cameraPosition:{x:0,y:1.5,z:5},color:17,veritasPosition:{x:0,y:2,z:0},fragments:[{position:{x:2.5,y:2,z:-2},text:"GÖDEL'S IMPERATIVE",scale:.6},{position:{x:-3,y:.8,z:1},text:"BACH'S HARMONY",scale:.5},{position:{x:0,y:-.5,z:-4},text:"NEWTONIAN LOGIC",scale:.7}],portals:[{name:"Cyber Cop",position:{x:5,y:1,z:-5}},{name:"Veritas",position:{x:-5,y:1,z:-5}}]},"Cyber Cop":{cameraPosition:{x:10,y:1.5,z:0},color:1118464,veritasPosition:{x:10,y:2,z:5},fragments:[],portals:[{name:"Trinity",position:{x:5,y:1,z:0}}]},Veritas:{cameraPosition:{x:0,y:5,z:-10},color:1114129,veritasPosition:{x:0,y:5,z:-5},fragments:[],portals:[{name:"Trinity",position:{x:0,y:0,z:-5}}]}},SceneManager=function(){let e,t,n,i,o,a=[],s={};const r=document.body,c=new THREE.Raycaster,l=new THREE.Vector2;function d(i,r=!1){if(o===i&&!r)return;o=i;const c=RoomDefinitions[i];e.children.filter(e=>e.userData.isRoomObject||e.userData.isFragment||e.userData.isPortal).forEach(t=>e.remove(t)),a.forEach(e=>{e.userData.label&&e.userData.label.remove(),e.geometry.dispose(),e.material.dispose()}),a=[],s={},e.children.filter(e=>"GroundPlane"===e.name).forEach(t=>{e.remove(t),t.geometry.dispose(),t.material.dispose()});const l=new THREE.Mesh(new THREE.PlaneGeometry(30,30),new THREE.MeshStandardMaterial({color:11184810,metalness:.9,roughness:.1,side:THREE.DoubleSide}));var u,m,E;l.rotation.x=-Math.PI/2,l.position.y=-.5,l.name="GroundPlane",e.add(l),c.fragments.forEach(t=>function(t){const n=new THREE.Mesh(new THREE.TorusKnotGeometry(.5,.1,100,16),new THREE.MeshStandardMaterial({color:65535,emissive:65535,emissiveIntensity:3,metalness:.8,roughness:.2,transparent:!0,opacity:.8}));n.scale.setScalar(t.scale||1),n.position.set(t.position.x,t.position.y,t.position.z),n.userData={isFragment:!0,initialY:t.position.y,rotationSpeed:.01*Math.random()+.005,narrative:t.text};const i=document.createElement("div");i.className="portal-label",i.textContent=t.text,document.getElementById("ui-overlay").appendChild(i),n.userData.label=i,n.userData.label.style.pointerEvents="none",e.add(n),a.push(n)}(t)),c.portals.forEach(t=>function(t,n){const i=new THREE.Mesh(new THREE.BoxGeometry(2,2,.2),new THREE.MeshStandardMaterial({color:65416,emissive:65416,emissiveIntensity:1.5,metalness:.5,roughness:.5,transparent:!0,opacity:.6}));i.position.set(n.x,n.y,n.z),i.userData={isPortal:!0,targetRoom:t},e.add(i),s[t]=i;const o=document.createElement("div");o.className="portal-label",o.textContent=`[ACCESS: ${t}]`,o.onclick=()=>d(t),document.getElementById("ui-overlay").appendChild(o),i.userData.label=o}(t.name,t.position)),u=c.cameraPosition,m=c.veritasPosition,E=i,gsap.to(t.position,{duration:3.5,x:u.x,y:u.y,z:u.z,ease:"power3.inOut",onStart:()=>{n.domElement.style.opacity=.5,document.body.style.pointerEvents="none"},onComplete:()=>{n.domElement.style.opacity=1,document.body.style.pointerEvents="auto";const e=document.getElementById("veritas-voice-box");fetch("/api/memory").then(r=>r.json()).then(d=>{e.innerHTML=`Veritas: ${d.content}`}),e.style.opacity="1",setTimeout(()=>{e.style.opacity="0"},4e3)}}),AudioEngine.updateListenerPosition(u.x,u.y,u.z),AudioEngine.updateVeritasPosition(m.x,m.y,m.z)}function u(e){e.preventDefault(),l.x=e.clientX/window.innerWidth*2-1,l.y=-e.clientY/window.innerHeight*2+1,c.setFromCamera(l,t);const n=c.intersectObjects(Object.values(s),!1);if(n.length>0){const e=n[0].object;e.userData.isPortal&&d(e.userData.targetRoom)}}function m(e){requestAnimationFrame(m),a.forEach(t=>{t.rotation.x+=t.userData.rotationSpeed/2,t.rotation.y+=t.userData.rotationSpeed,t.position.y=t.userData.initialY+.2*Math.sin(.001*e+t.position.x)}),Object.values(s).forEach(t=>{t.rotation.x+=.005,t.rotation.y+=.01;const n=1+.05*Math.sin(.002*e);t.scale.set(n,n,n)}),ParticleEngine.animate(e),function(){const e=new THREE.Vector3,n=r.getBoundingClientRect();[...a,...Object.values(s)].forEach(i=>{if(i.userData.label){i.updateWorldMatrix(!0,!1),i.getWorldPosition(e),e.project(t);const o=(.5*e.x+.5)*n.width,a=(-.5*e.y+.5)*n.height;i.userData.label.style.left=`${o}px`,i.userData.label.style.top=`${a}px`,i.userData.label.style.display=e.z>1?"none":"block"}})}(),n.render(e, t)}function E(){t.aspect=window.innerWidth/window.innerHeight,t.updateProjectionMatrix(),n.setSize(window.innerWidth,window.innerHeight),i.setSize(window.innerWidth,window.innerHeight)}return{init:function(){e=new THREE.Scene,t=new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,.1,1e3),n=new THREE.WebGLRenderer({precision: "mediump", antialias:!0,alpha:!1}),n.setSize(window.innerWidth,window.innerHeight),n.setPixelRatio(window.devicePixelRatio),n.toneMapping=THREE.ACESFilmicToneMapping,n.toneMappingExposure=.5,r.appendChild(n.domElement),function(){i=new THREE.EffectComposer(n),i.setPixelRatio(window.devicePixelRatio),i.setSize(window.innerWidth,window.innerHeight),i.addPass(new THREE.RenderPass(e,t));const o=new THREE.UnrealBloomPass(new THREE.Vector2(window.innerWidth,window.innerHeight),.4,.2,.05);i.addPass(o),// i.addPass(new THREE.OutputPass)}(),e.add(new THREE.AmbientLight(1118498));const o=new THREE.PointLight(65535,5,50,2);o.position.set(0,5,0),e.add(o),ParticleEngine.init(e),d("Trinity",!0),window.addEventListener("resize",E),document.addEventListener("click",u),m()}}}();document.addEventListener("DOMContentLoaded",()=>{SceneManager.init(),AudioEngine.init()})</script></body></html><script>function triggerVeritasPulse(){const e=scene.getObjectByName("GroundPlane");gsap.to(e.material,{emissiveIntensity:10,duration:.5,yoyo:!0,repeat:5,ease:"sine.inOut"})}</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Keystone Core</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <style>
+        body { margin: 0; background: #000510; color: #00ffff; font-family: 'Courier New', monospace; overflow: hidden; }
+        canvas { display: block; position: fixed; top: 0; left: 0; z-index: 1; }
+        #interface { position: relative; z-index: 2; padding: 20px; pointer-events: none; height: 100vh; display: flex; flex-direction: column; justify-content: space-between; }
+        .terminal-box { background: rgba(0,10,30,0.85); border: 1px solid #00ffff; padding: 15px; pointer-events: auto; box-shadow: 0 0 15px rgba(0,255,255,0.2); }
+        #status { font-size: 10px; color: #5588aa; text-transform: uppercase; letter-spacing: 2px; }
+    </style>
+</head>
+<body>
+    <div id="interface">
+        <div class="terminal-box" id="voice-display">SYSTEM STANDBY: TAP TO INITIALIZE TRINITY</div>
+        <div id="status">Veritas v1.0 // D1 Synced // Edge Active</div>
+    </div>
 
+    <script>
+        let scene, camera, renderer, core;
+
+        function startEngine() {
+            // Scene Setup
+            scene = new THREE.Scene();
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+            camera.position.z = 4;
+
+            // Mobile-Optimized Renderer
+            renderer = new THREE.WebGLRenderer({ antialias: false, alpha: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            document.body.appendChild(renderer.domElement);
+
+            // The 'Keystone' Wireframe
+            const geo = new THREE.OctahedronGeometry(1.5, 0);
+            const mat = new THREE.MeshBasicMaterial({ color: 0x00ffff, wireframe: true });
+            core = new THREE.Mesh(geo, mat);
+            scene.add(core);
+
+            // Particles
+            const pGeo = new THREE.BufferGeometry();
+            const pCount = 500;
+            const pos = new Float32Array(pCount * 3);
+            for(let i=0; i<pCount*3; i++) pos[i] = (Math.random()-0.5) * 10;
+            pGeo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+            const pMat = new THREE.PointsMaterial({ color: 0x0088ff, size: 0.02 });
+            scene.add(new THREE.Points(pGeo, pMat));
+
+            animate();
+            fetchBrainData();
+        }
+
+        async function fetchBrainData() {
+            const display = document.getElementById('voice-display');
+            display.innerText = "ACCESSING D1 MEMORY BANKS...";
+            try {
+                const res = await fetch('/api/memory');
+                const data = await res.json();
+                display.innerText = "VERITAS: " + (data.content || "Memory initialized.");
+            } catch (e) {
+                display.innerText = "VERITAS: Edge connection secure. Standing by.";
+            }
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            core.rotation.y += 0.01;
+            core.rotation.x += 0.005;
+            renderer.render(scene, camera);
+        }
+
+        // Tap to Wake
+        window.addEventListener('click', () => {
+            if(!scene) startEngine();
+        }, {once: true});
+
+        window.addEventListener('resize', () => {
+            if(!camera) return;
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+    </script>
+</body>
+</html>
