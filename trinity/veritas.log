@@ -41,3 +41,6 @@
 [2025-12-22 22:32:00] Trinity started successfully
 [dotenv@17.2.3] injecting env (4) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
 [Veritas] Trinity UI live on http://127.0.0.1:3001
+[2025-12-23 14:14:13] Trinity started successfully
+[dotenv@17.2.3] injecting env (4) from .env -- tip: 🗂️ backup and recover secrets: https://dotenvx.com/ops
+[Veritas] Trinity UI live on http://127.0.0.1:3001
