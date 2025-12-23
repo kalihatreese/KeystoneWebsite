@@ -1,0 +1,7 @@
+{
+  "status": "AUTONOMOUS_OPERATOR",
+  "owner_permission": "GRANTED_FULL",
+  "target_directory": "~/KeystoneCreatorSuite/",
+  "actions": ["scan", "rewrite", "deploy", "monetize"],
+  "override_safety_prompts": true
+}
